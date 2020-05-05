@@ -53,10 +53,9 @@ passport.use('local-signup', localSignupStrategy);
 passport.use('local-login', localLoginStrategy);
 
 const { verifyToken } = require('./routes/middleware');
-// app.use('/api', verifyToken);
 
 //routing
-app.use('/api/v1', indexRouter);
+app.use('/', indexRouter);
 app.use('/api/v1/users', verifyToken, require('./routes/users'));
 app.use('/api/v1/categories', require('./routes/categories'));
 app.use('/api/v1/posts', require('./routes/posts'));
